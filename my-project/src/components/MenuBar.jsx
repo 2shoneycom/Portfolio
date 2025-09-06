@@ -9,7 +9,7 @@ function MenuBar({ menuOnOff }) {
 		<>
 			{
 				menuOnOff ?
-					<div className="relative w-dvw h-[calc(100vh-var(--navbar-height))] px-4 py-1 bg-gray-800 z-10 sm:z-0 sm:w-sm">
+					<div className="fixed top-[var(--navbar-height)] left-0 w-dvw h-[calc(100vh-var(--navbar-height))] px-4 py-1 bg-gray-800 z-1 sm:w-sm">
 						<ul>
 							{menuList.map((item, index) => {
 								return (

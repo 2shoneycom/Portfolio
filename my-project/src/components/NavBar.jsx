@@ -8,7 +8,7 @@ function NavBar({ menuOnOff, setMenuOnOff }) {
   };
 
   return (
-    <nav className="w-full h-15 px-4 py-2 flex justify-between items-center bg-gray-800">
+    <nav className="fixed top-0 left-0 w-full h-15 px-4 py-2 flex justify-between items-center z-10 bg-gray-800">
       {/* menu button */}
       <div
         className="size-[44px] flex justify-center items-center rounded-md hover:bg-white/5 hover:cursor-pointer"
