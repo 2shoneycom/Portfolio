@@ -4,7 +4,7 @@ import { useState } from "react";
 import getProjectPosts from "../../utilities/getProjectPosts";
 import { Link } from "react-router-dom";
 
-function Projects_main() {
+function Web_htmlcss() {
   const [menuOnOff, setMenuOnOff] = useState(false);
   const posts = getProjectPosts();
 
@@ -12,93 +12,39 @@ function Projects_main() {
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <NavBar menuOnOff={menuOnOff} setMenuOnOff={setMenuOnOff} />
       <MenuBar menuOnOff={menuOnOff} setMenuOnOff={setMenuOnOff} />
-      
+
       {/* Main Content */}
-      <main className="w-full min-h-screen">
-        {/* Hero Section */}
-        <section className="relative px-6 sm:px-10 lg:px-16 pt-[var(--navbar-height)] pb-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="pt-16 pb-12 lg:pt-24 lg:pb-16">
-              {/* Hero Content */}
-              <div className="text-center space-y-8">
-                <div className="space-y-4">
-                  <p className="text-blue-600 font-semibold text-lg tracking-wide uppercase">
-                    Portfolio Showcase
-                  </p>
-                  <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-slate-800 via-blue-800 to-indigo-800 bg-clip-text text-transparent leading-tight">
-                    My Projects
-                  </h1>
-                  <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 leading-relaxed">
-                    Explore my creative works, technical projects, and innovative solutions. 
-                    Each project represents a unique challenge and learning experience.
-                  </p>
-                </div>
-                
-                {/* Stats */}
-                <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">{posts.length}+</div>
-                    <div className="text-slate-500 font-medium">Projects</div>
-                  </div>
-                  <div className="hidden sm:block w-px h-12 bg-slate-300"></div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-indigo-600">5+</div>
-                    <div className="text-slate-500 font-medium">Technologies</div>
-                  </div>
-                  <div className="hidden sm:block w-px h-12 bg-slate-300"></div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-600">2+</div>
-                    <div className="text-slate-500 font-medium">Years Experience</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <main className="w-full px-6 sm:px-10 lg:px-16 pt-[var(--navbar-height)]">
+        {/* Breadcrumb Navigation */}
+        <section className="px-6 sm:px-10 lg:px-16 pb-4">
+          <div className="max-w-4xl mx-auto pt-6">
+            <nav className="flex items-center space-x-2 text-sm text-slate-500">
+              <Link to="/" className="hover:text-blue-600 transition-colors duration-200">Home</Link>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <Link to="/web_courses" className="hover:text-blue-600 transition-colors duration-200">Web Courses</Link>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <span className="text-slate-800 font-medium">HTML/CSS</span>
+            </nav>
           </div>
-          
-          {/* Background Decorations */}
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        </section>
+        {/* Hero Section */}
+        <section className="w-full py-16 mb-10 sm:py-20 lg:py-24">
+          <div className="text-center">
+            <h1 className="
+              text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 
+              font-bold text-gray-900 mb-4
+              bg-gradient-to-r from-indigo-600 to-purple-600 
+              bg-clip-text text-transparent
+            ">
+              HTML/CSS
+            </h1>
+          </div>
         </section>
 
-        {/* Filter/Search Section */}
-        <section className="px-6 sm:px-10 lg:px-16 pb-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 shadow-lg">
-              <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
-                <div className="flex items-center space-x-4">
-                  <h3 className="text-lg font-semibold text-slate-800">Filter Projects</h3>
-                  <div className="flex flex-wrap gap-2">
-                    <button className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg font-medium hover:bg-blue-200 transition-colors duration-200">
-                      All
-                    </button>
-                    <button className="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition-colors duration-200">
-                      Web Dev
-                    </button>
-                    <button className="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition-colors duration-200">
-                      Design
-                    </button>
-                    <button className="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition-colors duration-200">
-                      Mobile
-                    </button>
-                  </div>
-                </div>
-                
-                {/* Search Bar */}
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Search projects..." 
-                    className="w-64 px-4 py-2 pl-10 bg-white border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200"
-                  />
-                  <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         {/* Projects Grid */}
         <section className="px-6 sm:px-10 lg:px-16 pb-16">
           <div className="max-w-7xl mx-auto">
@@ -117,10 +63,10 @@ function Projects_main() {
                           <div className="text-white/60 text-sm font-medium">Project {index + 1}</div>
                         </div>
                       </div>
-                      
+
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>
-                      
+
                       {/* Project Status Badge */}
                       <div className="absolute top-4 right-4">
                         <span className="px-3 py-1 bg-green-500/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full">
@@ -180,7 +126,7 @@ function Projects_main() {
                             <span className="text-xs">Demo</span>
                           </div>
                         </div>
-                        
+
                         <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-blue-500 flex items-center justify-center transition-all duration-200">
                           <svg className="w-4 h-4 text-slate-600 group-hover:text-white transform group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -214,4 +160,4 @@ function Projects_main() {
   );
 }
 
-export default Projects_main;
+export default Web_htmlcss;

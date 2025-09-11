@@ -49,12 +49,6 @@ function NavBar({ menuOnOff, setMenuOnOff }) {
       {/* Navigation Links - Hidden on mobile, visible on larger screens */}
       <div className="hidden md:flex items-center space-x-1 mr-4">
         <Link 
-          to="/projects" 
-          className="px-4 py-2 text-slate-600 hover:text-blue-600 font-medium rounded-lg hover:bg-slate-50 transition-all duration-200"
-        >
-          Projects
-        </Link>
-        <Link 
           to="/about" 
           className="px-4 py-2 text-slate-600 hover:text-blue-600 font-medium rounded-lg hover:bg-slate-50 transition-all duration-200"
         >
