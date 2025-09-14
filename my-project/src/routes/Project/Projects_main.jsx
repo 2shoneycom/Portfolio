@@ -151,14 +151,14 @@ function Projects_main() {
 
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2">
-                        {(post.technologies || ["React", "JavaScript", "CSS"]).slice(0, 3).map((tech, techIndex) => (
+                        {(post.tags || ["React", "JavaScript", "CSS"]).slice(0, 3).map((tech, techIndex) => (
                           <span key={techIndex} className="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-md">
                             {tech}
                           </span>
                         ))}
-                        {(post.technologies || []).length > 3 && (
+                        {(post.tags || []).length > 3 && (
                           <span className="px-2 py-1 bg-slate-100 text-slate-500 text-xs font-medium rounded-md">
-                            +{(post.technologies || []).length - 3} more
+                            +{(post.tags || []).length - 3} more
                           </span>
                         )}
                       </div>

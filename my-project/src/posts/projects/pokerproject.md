@@ -1,8 +1,10 @@
 ---
 title: "Poker Project"
+description: "Online Multiplayer Poker Game By Unity 3D and Firebase"
+category: "Project"
 date: "2025-09-09"
-tags: ["project", "unity"]
-id: "987sf2-129239"
+tags: ["web", "html"]
+custom-order: 
 ---
 # 졸업 프로젝트
 
