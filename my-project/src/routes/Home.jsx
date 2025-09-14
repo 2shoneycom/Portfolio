@@ -2,7 +2,6 @@ import { useState } from 'react';
 import MenuBar from '../components/MenuBar';
 import NavBar from '../components/NavBar';
 import PostList from '../components/PostList';
-import '../styles/style.css';
 
 function Home() {
   const [menuOnOff, setMenuOnOff] = useState(false);
