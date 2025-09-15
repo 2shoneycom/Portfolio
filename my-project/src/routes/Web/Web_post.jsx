@@ -7,13 +7,28 @@ import getHTMLCSSPosts from "../../utilities/getHTMLCSSPosts";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import "highlight.js/styles/a11y-dark.css"
+import getAllPosts from "../../utilities/getAllPosts";
 
-function Web_detail() {
+function Web_post() {
   const navigate = useNavigate();
-  const { slug } = useParams();  // get the slug from URL
-  const posts = getHTMLCSSPosts(); // get all posts
+  const { category, slug } = useParams();  // get the slug from URL
+  const posts = getAllPosts(); // get all posts
   const post = posts.find(p => p.slug === slug); // find the one that matches
   const [menuOnOff, setMenuOnOff] = useState(false);
+
+  // By category, pre-setting some values
+  var title = null;
+  switch (category) {
+    case "html-css":
+      title = "HTML/CSS";
+      break;
+    case "nodejs":
+      title = "NodeJS"
+      break;
+    case "react":
+      title = "React"
+      break;
+  }
 
   if (!post) {
     return (
@@ -34,7 +49,7 @@ function Web_detail() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              <span>Back to Projects</span>
+              <span>Back</span>
             </div>
           </div>
         </div>
@@ -61,7 +76,7 @@ function Web_detail() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <Link to="/web_courses/html-css" className="hover:text-blue-600 transition-colors duration-200">HTML/CSS</Link>
+              <Link to={`/web_courses/${category}`} className="hover:text-blue-600 transition-colors duration-200">{title}</Link>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -74,15 +89,15 @@ function Web_detail() {
         <section className="px-6 sm:px-10 lg:px-16 pb-8">
           <div className="max-w-4xl mx-auto">
             {/* Back Button */}
-            <Link
-              to="/web_courses/html-css"
-              className="inline-flex items-center space-x-2 mb-8 px-4 py-2 text-slate-600 hover:text-blue-600 font-medium rounded-lg hover:bg-white/50 transition-all duration-200 group"
+            <div
+              className="inline-flex items-center space-x-2 mb-8 px-4 py-2 text-slate-600 hover:text-blue-600 font-medium rounded-lg hover:bg-white/50 transition-all duration-200 group hover:cursor-pointer"
+              onClick={() => { navigate(-1) }}
             >
               <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               <span>Back</span>
-            </Link>
+            </div>
 
             {/* Project Header */}
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 shadow-lg mb-8">
@@ -158,4 +173,4 @@ function Web_detail() {
   );
 }
 
-export default Web_detail;
+export default Web_post;

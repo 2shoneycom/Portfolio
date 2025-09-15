@@ -6,7 +6,7 @@ function MenuBar({ menuOnOff, setMenuOnOff }) {
     "Projects", "Web", "Languages", "Algorithms", "Git"
   ]);
 
-  let linkList = ["projects", "web_courses", "languages", "algorithms", "git_courses"];
+  let linkList = ["projects", "web_courses", "language", "algorithm", "git_courses"];
 
   // Icon mapping for each menu item
   const iconMap = {

@@ -2,13 +2,34 @@ import NavBar from "../../components/NavBar";
 import MenuBar from "../../components/MenuBar";
 import { useState } from "react";
 import getHTMLCSSPosts from "../../utilities/getHTMLCSSPosts";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import getHTMLCSSPosts_custom_order from "../../utilities/getHTMLCSSPosts_custom_order";
+import getNodejsPosts from "../../utilities/getNodejsPosts";
+import getReactPosts from "../../utilities/getReactPosts";
 
-function Web_htmlcss() {
+function Web_subsection() {
   const [menuOnOff, setMenuOnOff] = useState(false);
-  // const posts = getHTMLCSSPosts_custom_order();
-  const posts = getHTMLCSSPosts();
+
+  // get url parameter -> decide category -> decide some values
+  const { category } = useParams();
+  var posts = null;
+  var title = null;
+  switch (category) {
+    case "html-css":
+      // const posts = getHTMLCSSPosts_custom_order();
+      posts = getHTMLCSSPosts();
+      title = "HTML/CSS";
+      break;
+    case "nodejs":
+      posts = getNodejsPosts();
+      title = "NodeJS"
+      break;
+    case "react":
+      posts = getReactPosts();
+      title = "React"
+      break;
+  }
+
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -29,7 +50,7 @@ function Web_htmlcss() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <span className="text-slate-800 font-medium">HTML/CSS</span>
+              <span className="text-slate-800 font-medium">{title}</span>
             </nav>
           </div>
         </section>
@@ -42,7 +63,7 @@ function Web_htmlcss() {
               bg-gradient-to-r from-indigo-600 to-purple-600 
               bg-clip-text text-transparent
             ">
-              HTML/CSS
+              {title}
             </h1>
           </div>
         </section>
@@ -114,4 +135,4 @@ function Web_htmlcss() {
   );
 }
 
-export default Web_htmlcss;
+export default Web_subsection;
