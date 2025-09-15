@@ -138,7 +138,7 @@ function Web_detail() {
             <article className="bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-lg overflow-hidden">
               {/* Markdown Content */}
               <div className="p-8">
-                <div className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-slate-600 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-800 prose-code:bg-slate-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-pre:bg-slate-800 prose-pre:text-slate-100 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-ul:text-slate-600 prose-ol:text-slate-600 prose-li:text-slate-600 prose-img:max-w-md">
+                <div className="prose prose-slate max-w-none prose-headings:text-slate-800 prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-slate-600 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-800 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-pre:bg-slate-800 prose-pre:text-slate-100 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-ul:text-slate-600 prose-ol:text-slate-600 prose-li:text-slate-600 prose-img:w-max md:prose-img:w-1/2 prose-video:w-max">
                   <ReactMarkdown
                     rehypePlugins={[rehypeHighlight, rehypeRaw]}
                   >

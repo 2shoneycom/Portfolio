@@ -5,3 +5,14 @@
 :root {
     --navbar-height: 4rem;
 }
+
+/* need to support responsive web design */
+/* now, too small in small screen width! */
+
+img.custom-w-full {
+    width: 100%;
+}
+
+img.custom-w-80 {
+    width: 80%;
+}

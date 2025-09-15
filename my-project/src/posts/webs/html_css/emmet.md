@@ -22,8 +22,8 @@ HTML 기본 코드를 작성할 수 있다.
 
 예를 들어, 다음과 같다.
 
-- div → <div></div>
-- img → <img src=”” alt=””>
+- div → \<div>\</div>
+- img → \<img src=”” alt=””>
 
 ## 중첩
 
@@ -53,7 +53,7 @@ emmet 코드를 중첩 시켜서 더 복잡한 코드로 만들 수 있다.
 - **@n 또는 @-n**
 : 넘버링의 방향과 출발 문자를 정해준다. n부터 시작해라 또는 n으로 끝내라 라는의미
 
-ex) li.item$@-3*3 → <li class=”item5”></li><li class=”item4”></li><li class=”item3”></li>
+ex) li.item$@-3*3 → \<li class=”item5”>\</li>\<li class=”item4”>\</li>\<li class=”item3”>\</li>
 
 ## Text emmet 코드
 
